@@ -7,7 +7,7 @@ title: 一只蟹酱的主页
 subtitle: ''
 description: ''
 keywords:
-author: Xie Yijiang
+author: 一只蟹酱
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
@@ -96,7 +96,8 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+## theme: landscape
+theme: anzhiyu
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
