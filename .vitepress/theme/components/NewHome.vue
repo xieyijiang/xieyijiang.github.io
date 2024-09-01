@@ -1,9 +1,9 @@
 <template>
   <n-config-provider :theme="currentTheme" :locale="zhCN" :date-locale="dateZhCN"
     :theme-overrides="currentTheme === undefined ? lightThemeOverrides : darkThemeOverrides">
-    <div class="min-w-196 flex flex-col items-center">
-      <div class="flex flex-col items-center justify-center">
-        <div v-for="post in displayPosts" :key="post.regularPath" class="min-w-200 max-w-5xl mt-8 flex flex-col gap-1">
+    <div class="flex flex-col items-center">
+      <div class="flex flex-col justify-center">
+        <div v-for="post in displayPosts" :key="post.regularPath" class="max-w-5xl mt-8 px-4 flex flex-col gap-1">
           <div>
             <span class="cursor-pointer text-lg font-medium" @click="jump2post(post)">{{ post.frontMatter.title
               }}</span>

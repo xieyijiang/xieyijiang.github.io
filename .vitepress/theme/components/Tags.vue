@@ -2,15 +2,15 @@
 <template>
   <n-config-provider :theme="currentTheme"
     :theme-overrides="currentTheme === undefined ? lightThemeOverrides : darkThemeOverrides">
-    <div class="mx-auto my-0 pt4 max-w-100 flex gap-2">
+    <div class="mt-4 px-4 flex flex-wrap gap-2 justify-center">
       <n-tag v-for="(arr, key) in tags" :key="key" v-model:checked="checked[key]" checkable>
         {{ key + ' ' + arr.length }}
       </n-tag>
     </div>
-    <div class="mt-8 flex gap-2 flex-col items-center justify-center">
-      <div v-for="post in checkedPosts" :key="post.regularPath" class="w-2/3 min-w-128 flex items-center justify-between">
-        <span class="font-semibold cursor-pointer" @click="router.go(post.regularPath.replace(/^\/src\/|\.html$/g, ''))">{{ post.frontMatter.title }}</span>
-        <span class="font-light text-sm">{{ dayjs(post.frontMatter.date).format('YYYY-MM-DD') }}</span>
+    <div class="mt-8 px-4 flex gap-2 flex-col items-center">
+      <div v-for="post in checkedPosts" :key="post.regularPath" class="w-full max-w-4xl flex grow items-center justify-between">
+        <span class="w-5/8 font-semibold cursor-pointer truncate" @click="router.go(post.regularPath.replace(/^\/src\/|\.html$/g, ''))">{{ post.frontMatter.title }}</span>
+        <span class="w-2/8 font-light text-sm text-right">{{ dayjs(post.frontMatter.date).format('YYYY-MM-DD') }}</span>
       </div>
     </div>
   </n-config-provider>

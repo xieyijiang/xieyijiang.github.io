@@ -39,8 +39,9 @@ export default defineConfig({
       provider: 'local',
     },
     footer: {
-      message: 'MIT Licensed | Copyright © 2023-present Xie Yijiang',
-      copyright: '浙ICP备2024064918号'
+      message: '基于 MIT 许可发布',
+      copyright: '版权所有 © 2023-present 解宜江',
+      // copyright: '浙ICP备2024064918号'
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/xieyijiang' }
