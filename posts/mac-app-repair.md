@@ -2,6 +2,7 @@
 date: 1690857960000
 title: MacOS打开应用提示 "XXX 已损坏，无法打开..."
 description: 原因是未经认证的应用被系统添加了隔离标记，可通过命令移除此标记
+pinned: true
 aside: false
 footer: false
 tags:

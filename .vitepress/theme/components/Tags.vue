@@ -8,7 +8,7 @@
       </n-tag>
     </div>
     <div class="mt-8 px-4 flex gap-2 flex-col items-center">
-      <div v-for="post in checkedPosts" :key="post.regularPath" class="w-full max-w-4xl flex grow items-center justify-between">
+      <div v-for="post in checkedPosts" :key="post.regularPath" class="w-full max-w-4xl flex items-center justify-between">
         <span class="w-5/8 font-semibold cursor-pointer truncate" @click="router.go(post.regularPath.replace(/^\/src\/|\.html$/g, ''))">{{ post.frontMatter.title }}</span>
         <span class="w-2/8 font-light text-sm text-right">{{ dayjs(post.frontMatter.date).format('YYYY-MM-DD') }}</span>
       </div>

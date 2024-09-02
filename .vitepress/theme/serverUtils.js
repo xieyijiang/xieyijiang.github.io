@@ -17,7 +17,16 @@ export async function getPosts(pageSize = 10) {
       }
     })
   )
-  posts.sort(_compareDate)
+  // posts.sort(_compareDate)
+  posts.sort((a, b) => {
+    if (a.frontMatter.pinned && !b.frontMatter.pinned) {
+      return -1;
+    } else if (!a.frontMatter.pinned && b.frontMatter.pinned) {
+      return 1;
+    } else {
+      return _compareDate(a, b);
+    }
+  });
   return posts
 }
 
