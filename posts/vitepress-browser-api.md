@@ -2,7 +2,6 @@
 date: 1725261169000
 title: 'VitePress 构建时报错 "ReferenceError: getComputedStyle is not defined"'
 description: VitePress在构建时会尝试执行js代码，但没有浏览器环境，所以代码中包含浏览器提供的API会报错
-pinned: true
 aside: false
 footer: false
 tags:
