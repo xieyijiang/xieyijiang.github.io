@@ -3,7 +3,7 @@
     :theme-overrides="currentTheme === undefined ? lightThemeOverrides : darkThemeOverrides">
     <div class="flex flex-col items-center ">
       <div v-for="post in displayPosts" :key="post.regularPath" class="w-full max-w-2xl mt-8 px-4 flex flex-col gap-1">
-        <span class="cursor-pointer text-lg font-medium" @click="jump2post(post)">
+        <span class="cursor-pointer text-lg font-medium" @click="router.go(post.regularPath)">
           <n-icon-wrapper v-if="post.frontMatter.pinned === true" :size="iconWrapperSize" :border-radius="2">
             <n-icon size="0.8rem">
               <Pinned />
@@ -63,8 +63,8 @@ function onPageSizeUpdate(newPageSize) {
 }
 
 function jump2post(post) {
-  const newPath = post.regularPath.replace(/^\/src\/|\.html$/g, '')
-  router.go(newPath)
+  // const newPath = post.regularPath.replace(/^\/src\/|\.html$/g, '')
+  router.go(post.regularPath)
 }
 
 onMounted(() => {
