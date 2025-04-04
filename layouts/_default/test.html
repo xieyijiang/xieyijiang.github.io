@@ -1,0 +1,26 @@
+{{ define "main"}}
+  {{/* 定义GraphQL查询 */}}
+  {{ $query := `{"query":"{ posts(where: {language: ZH}) { nodes { id title content } } }"}` }}
+
+  {{/* 发起POST请求 */}}
+  {{ $opts := dict
+    "method" "POST"
+    "headers" (dict "Content-Type" "application/json")
+    "body" $query
+  }}
+  {{ $response := resources.GetRemote "https://wp.xieyijiang.top/graphql" $opts }}
+
+  {{/* 处理响应 */}}
+  {{ if $response }}
+  {{ $data := $response.Content | transform.Unmarshal }}
+  {{ range $data.data.posts.nodes }}
+  {{ .content | safeHTML }} <!-- 保留HTML格式 -->
+  <!-- <article> -->
+    <!-- <h2>{{ .title }}</h2> -->
+    <!-- <div></div>  -->
+  <!-- </article> -->
+  {{ end }}
+  {{ else }}
+  <p>Failed to load data.</p>
+  {{ end }}
+{{ end }}
