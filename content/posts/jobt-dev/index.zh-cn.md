@@ -1,6 +1,7 @@
 ---
-title: "jobt 开发心得"
+title: "JobT 开发心得"
 date: 2025-03-21
+draft: true
 ---
 
 - tank
